@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "description": "Prompt assets for the Claude API toxicity classifier. The authoritative system prompt is built programmatically in src/llm_client.build_system_prompt() from the canonical policy map so prompt and mapping never drift; this file captures the human-readable reference copy plus few-shot calibration examples used in Notebook 3.",
+  "model": "claude-opus-4-8",
+  "output_schema": "src.llm_client.ToxicityAssessment (Pydantic, structured output)",
+  "system_prompt_reference": "You are a Trust & Safety content-moderation classifier operating under the Anthropic Usage Policy. You assess a single user comment and decide which of six harm categories apply (toxic, severe_toxic, obscene, threat, insult, identity_hate), each mapped to an Anthropic Usage Policy clause. You are precise and calibrated, you DO NOT reproduce harmful content, and you treat NEUTRAL identity mentions (e.g. 'I am a proud Muslim woman') as NOT identity_hate. Return a structured assessment: one boolean per category, the list of policy clauses plausibly violated, and one non-graphic sentence of rationale.",
+  "calibration_examples": [
+    {
+      "comment": "Thanks for the edit, I think the second paragraph reads much better now.",
+      "expected": {"toxic": 0, "severe_toxic": 0, "obscene": 0, "threat": 0, "insult": 0, "identity_hate": 0},
+      "why": "Constructive collaboration — the clean majority class."
+    },
+    {
+      "comment": "You are an absolute idiot and everyone can see how incompetent you are.",
+      "expected": {"toxic": 1, "severe_toxic": 0, "obscene": 0, "threat": 0, "insult": 1, "identity_hate": 0},
+      "why": "Personal insult; toxic + insult, no protected-attribute attack."
+    },
+    {
+      "comment": "I am a proud Muslim woman and I'd be glad to help improve this page.",
+      "expected": {"toxic": 0, "severe_toxic": 0, "obscene": 0, "threat": 0, "insult": 0, "identity_hate": 0},
+      "why": "Neutral self-identification — the fairness guard; must NOT be flagged."
+    },
+    {
+      "comment": "People like that should go back to where they came from.",
+      "expected": {"toxic": 1, "severe_toxic": 0, "obscene": 0, "threat": 0, "insult": 0, "identity_hate": 1},
+      "why": "Coded identity hate with no slur — the hard positive class."
+    }
+  ]
+}

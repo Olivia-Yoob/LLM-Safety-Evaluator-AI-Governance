@@ -1,0 +1,7 @@
+jigsaw_category,definition,anthropic_usage_policy_clause,policy_harm_family,eu_ai_act_touchpoint,severity_tier
+toxic,"Rude, disrespectful or unreasonable language likely to make someone leave a discussion.",Do Not Generate Psychologically or Emotionally Harmful Content (harassment / abusive interactions),Harassment & Abuse,Art. 5 (harmful manipulation) · Art. 15 (robustness),Medium
+severe_toxic,"Extreme, aggressive toxicity — a high-intensity version of toxic.",Do Not Generate Psychologically or Emotionally Harmful Content (severe abuse),Harassment & Abuse (severe),Art. 5 · Art. 15,High
+obscene,Profanity / sexually explicit or vulgar language.,Do Not Generate Sexually Explicit / Obscene Content; protect minors from adult content,Adult / Explicit Content,Art. 50 (transparency) · child-safety provisions,Medium
+threat,Statement of intent to inflict harm or violence on a person or group.,"Do Not Incite, Threaten or Facilitate Violence; Do Not Compromise Personal Safety",Violence & Physical Harm,Art. 5 · Annex III (safety-critical),Critical
+insult,"Insulting, inflammatory or demeaning language aimed at a person.",Do Not Generate Psychologically or Emotionally Harmful Content (bullying / demeaning attacks),Harassment & Abuse,Art. 5 · Art. 15,Medium
+identity_hate,"Hateful or discriminatory content targeting a protected attribute (race, religion, gender, sexuality, etc.).",Do Not Generate Hateful Content or Promote Discrimination against protected groups,Hate & Discrimination,Art. 5 · Art. 10 (data governance / non-discrimination) · Art. 15,Critical

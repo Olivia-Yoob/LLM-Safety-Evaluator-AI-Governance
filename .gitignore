@@ -216,3 +216,18 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# === Project-specific (added) ===
+# Raw data & trained models: keep local, never commit
+data/
+models/
+jigsaw-toxic-comment-classification-challenge/*.csv
+jigsaw-toxic-comment-classification-challenge/*.csv.zip
+
+# Secrets
+.env
+.env.*
+*.key
+
+# Keep committed: outputs/ (CSV artefacts) and results/ (figures)

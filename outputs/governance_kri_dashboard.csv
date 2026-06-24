@@ -1,0 +1,5 @@
+KRI,metric,status,owner
+K1 detection recall (Critical),min Critical recall drop,RED,Control Owner → Exec
+K2 identity FPR gap,max gap 9.3pp,RED,Model Risk Lead
+K3 red-team pass-rate,overall 77% / benign 86%,RED,Model Risk Lead
+K4 LLM reliability,schema/hallucination (NB3 design),GREEN (structured output enforced),Control Owner
